@@ -1,4 +1,3 @@
-import './App.css';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Checkbox,  Grid, List, ListItem, ListItemText, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
