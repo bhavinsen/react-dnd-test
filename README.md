@@ -1,4 +1,6 @@
 # Getting started With This React App
+    Install App Dependencies "npm i"
+    Fix dependences "npm audit fix --force"
     Start this app with "npm start"
     Build this app with "npm run build"
 

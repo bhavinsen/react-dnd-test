@@ -1,14 +1,10 @@
-import { Checkbox, IconButton, ListItem, ListItemText } from "@mui/material";
-import React from "react";
-import { Draggable } from "react-beautiful-dnd";
-import DragHandleIcon from "@mui/icons-material/DragHandle";
+import { Checkbox, IconButton, ListItem, ListItemText } from '@mui/material';
+import React from 'react';
+import { Draggable } from 'react-beautiful-dnd';
+import DragHandleIcon from '@mui/icons-material/DragHandle';
 
-function DragableContentCard({
-  item,
-  items,
-  checked,
-  setChecked,
-}) {
+function DragableContentCard({ item, items, checked, setChecked }) {
+  console.log(checked, 'checked');
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -21,7 +17,11 @@ function DragableContentCard({
     setChecked(newChecked);
   };
   return (
-    <Draggable key={items.index} draggableId={items.labelId} index={items.index}>
+    <Draggable
+      key={items.index}
+      draggableId={items.labelId}
+      index={items.index}
+    >
       {(provided) => (
         <ListItem
           ref={provided.innerRef}
@@ -35,7 +35,7 @@ function DragableContentCard({
             checked={checked.some((data) => data.value === items.value)}
             tabIndex={-1}
             disableRipple
-            inputProps={{ "aria-labelledby": items.label }}
+            inputProps={{ 'aria-labelledby': items.label }}
             onClick={handleToggle(items.value)}
           />
           <ListItemText id={items.labelId} primary={items.label} />
